@@ -1,0 +1,155 @@
+:root {
+	--titleSize: 3rem;
+	--titleWeight: 700;
+	--subTitleSize: 1.2rem;
+	--headlineSize: 1.3rem;
+	--bodyAndBlockquote: 1rem;
+	--cite: 0.9rem;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial,
+		sans-serif;
+	font-size: var(--bodyAndBlockquote);
+	line-height: 1.4;
+	background-color: #32294e;
+	color: #c6cfbb;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	padding: 10px;
+}
+
+#title {
+	margin: 40px 0 5px;
+	font-size: var(--titleSize);
+	font-weight: var(--titleWeight);
+}
+
+p {
+	margin: 0 0 50px;
+	font-size: var(--subTitleSize);
+	color: #4a70ab;
+}
+
+#img-div {
+	margin: 0;
+	padding: 10px;
+	background-color: #4a70ab;
+	border-radius: 10px;
+}
+
+#img-caption {
+	color: #32294e;
+	margin: 10px 0 0;
+}
+
+#image {
+	display: block;
+	max-width: 100%;
+	min-width: 100%;
+	height: auto;
+	margin: 0 auto;
+	border-radius: 10px;
+}
+
+#tribute-info {
+	margin: 40px 0;
+}
+
+#headline {
+	font-size: var(--headlineSize);
+}
+
+ul {
+	text-align: left;
+	max-width: 100%;
+	margin: 40px auto;
+	padding: 0 0 0 23px;
+	line-height: 1.45;
+	transition: max-width 0.6s;
+}
+
+li {
+	margin: 0 0 10px;
+	text-align: justify;
+}
+
+li strong {
+	color: #4a70ab;
+}
+
+blockquote {
+	max-width: 80%;
+	margin: 0 auto 40px;
+	text-align: left;
+	font-style: italic;
+}
+
+blockquote p {
+	color: #f9f7f7;
+	font-size: var(--blockquote);
+	text-align: justify;
+	margin: 0 0 15px;
+}
+
+cite {
+	color: #9f91a2;
+	font-size: var(--cite);
+}
+
+#tribute-info h3 {
+	margin: 0;
+	font-size: var(--subTitleSize);
+}
+
+#tribute-link,
+#tribute-link:visited {
+	color: #4a70ab;
+	text-decoration: none;
+}
+
+#tribute-link:hover {
+	color: #9f91a2;
+}
+
+@media screen and (max-width: 600px) {
+	:root {
+		--titleSize: 1.6rem;
+		--titleWeight: 600;
+		--subTitleSize: 0.9rem;
+		--headlineSize: 0.8rem;
+		--bodyAndBlockquote: 0.8rem;
+		--cite: 0.6rem;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	ul {
+		max-width: 80%;
+	}
+	blockquote {
+		max-width: 70%;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	ul {
+		max-width: 70%;
+	}
+	blockquote {
+		max-width: 60%;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	ul {
+		max-width: 60%;
+	}
+	blockquote {
+		max-width: 50%;
+	}
+}
