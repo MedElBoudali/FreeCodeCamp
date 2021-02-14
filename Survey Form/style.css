@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap");
+
+:root {
+	--whiteColor: #fff;
+	--blackColor: #000;
+	--purpleColor: rgb(101, 38, 218);
+	--lightPurpleColor: rgba(101, 38, 218, 0.637);
+	--grayColor: rgb(148, 148, 148);
+	--redColor: rgb(206, 85, 85);
+	--fontSize07: 0.7rem;
+	--fontSize1: 1rem;
+	--fontSize11: 1.1rem;
+	--fontSize12: 1.2rem;
+	--fontSize13: 1.3rem;
+	--fontSize15: 1.5rem;
+	--fontSize4: 4rem;
+	--fontWeight3: 300;
+	--fontWeight4: 400;
+	--fontWeight6: 600;
+	--fontweight9: 900;
+	--headerMargin: 150px;
+	--mainWidth: 60%;
+	--mainPadding: 50px;
+	--inputHeight: 50px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: rgb(0, 0, 0);
+	font-family: "Poppins", sans-serif;
+	font-size: var(--fontSize1);
+	font-weight: var(--fontWeight4);
+	line-height: 1.4;
+	width: 100%;
+	height: 100vh;
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	filter: grayscale(100%);
+	opacity: 0.2;
+	z-index: -1;
+}
+
+header {
+	text-align: center;
+	margin: var(--headerMargin) 0;
+	color: var(--whiteColor);
+}
+
+main {
+	background-color: var(--whiteColor);
+	color: var(--blackColor);
+	width: var(--mainWidth);
+	border-radius: 10px;
+	border-top: 5px solid var(--purpleColor);
+	margin: 0 auto;
+	padding: var(--mainPadding);
+}
+
+#title {
+	margin: 0;
+	padding: 0;
+	font-size: var(--fontSize4);
+	font-weight: var(--fontweight9);
+	letter-spacing: 3px;
+}
+
+#description {
+	font-size: var(--fontSize13);
+	margin: 30px 0 0 0;
+	color: var(--grayColor);
+}
+
+form {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+}
+
+#name-label,
+#email-label,
+#number-label {
+	font-size: var(--fontSize13);
+	font-weight: var(--fontWeight6);
+	color: var(--lightPurpleColor);
+	margin: 0 0 5px 0;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+#dropdown {
+	height: var(--inputHeight);
+	border: none;
+	outline: none;
+	border-bottom: 4px solid var(--whiteColor);
+	border-radius: 5px;
+	color: var(--grayColor);
+	font-size: var(--fontSize12);
+	font-weight: var(--fontWeight3);
+	margin: 0 0 30px 0;
+	appearance: none;
+}
+
+#dropdown option {
+	background: var(--whiteColor);
+	color: var(--purpleColor);
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+input[type="email"]::placeholder,
+#comment::placeholder {
+	color: var(--grayColor);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+#comment:focus {
+	border-bottom: 4px solid var(--lightPurpleColor);
+}
+
+.question {
+	font-size: var(--fontSize13);
+	font-weight: var(--fontWeight6);
+	color: var(--lightPurpleColor);
+	margin: 0 0 5px 0;
+}
+
+.required,
+#optional {
+	margin-left: 5px;
+	color: var(--redColor);
+	font-weight: var(--fontWeight3);
+}
+
+.required {
+	font-size: var(--fontSize11);
+}
+
+#optional {
+	font-size: var(--fontSize07);
+}
+
+#radioButtonsContainer,
+#checkboxContainer {
+	display: flex;
+	height: var(--inputHeight);
+	justify-content: space-around;
+	align-items: center;
+	color: var(--purpleColor);
+	font-weight: var(--fontWeight6);
+	margin: 0 0 30px 0;
+}
+
+#radioButtonsContainer div label,
+#checkboxContainer div label {
+	margin-left: 5px;
+}
+
+#radioButtonsContainer div input,
+#checkboxContainer div input {
+	display: inline-flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0;
+}
+
+input,
+select,
+#radioButtonsContainer div label,
+#checkboxContainer div label {
+	cursor: pointer;
+}
+
+#comment {
+	border: none;
+	outline: none;
+	border-bottom: 4px solid var(--whiteColor);
+	border-radius: 5px;
+	color: var(--grayColor);
+	font-size: var(--fontSize15);
+	font-weight: var(--fontWeight3);
+	margin: 0;
+	resize: none;
+}
+
+#submit {
+	background-color: var(--purpleColor);
+	margin: 30px 0 0;
+	height: var(--inputHeight);
+	border: none;
+	outline: none;
+	color: var(--whiteColor);
+	font-size: var(--fontSize12);
+	font-weight: var(--fontWeight6);
+	letter-spacing: 4px;
+	border-radius: 5px;
+	text-transform: uppercase;
+}
+
+#submit:hover,
+#submit:focus {
+	background-color: var(--blackColor);
+	color: var(--purpleColor);
+	cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+	:root {
+		--fontSize07: 0.6rem;
+		--fontSize1: 0.8rem;
+		--fontSize11: 0.9rem;
+		--fontSize12: 0.9rem;
+		--fontSize13: 1rem;
+		--fontSize15: 1.2rem;
+		--fontSize4: 2rem;
+		--fontWeight4: 300;
+		--fontWeight6: 500;
+		--fontweight9: 600;
+		--headerMargin: 100px;
+		--mainWidth: 95%;
+		--mainPadding: 20px;
+		--inputHeight: 30px;
+	}
+}

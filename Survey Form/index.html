@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Survey Form</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header>
+			<h1 id="title">2021 Developer Survey</h1>
+			<p id="description">Thank you for taking the time to help us improve the platform.</p>
+		</header>
+		<main>
+			<form id="survey-form">
+				<label for="name" id="name-label">Name<span class="required">*</span></label>
+				<input type="text" name="name" id="name" required placeholder="Enter your name" />
+				<label for="email" id="email-label">Email<span class="required">*</span></label>
+				<input type="email" name="email" id="email" required placeholder="Enter your email" />
+				<label for="number" id="number-label">Age <span id="optional">optional</span></label>
+				<input
+					type="number"
+					name="number"
+					id="number"
+					min="3"
+					max="20"
+					placeholder="Enter your age"
+				/>
+				<h3 class="question">What is the highest level of education you've completed?</h3>
+				<select id="dropdown" name="dropdown">
+					<option value="" hidden disabled selected>Select Level</option>
+					<option value="Less than Bachelor's degree">Less than Bachelor's degree</option>
+					<option value="Bachelor's degree">Bachelor's degree</option>
+					<option value="Master's degree or Doctorate degree">
+						Master's degree or Doctorate degree
+					</option>
+				</select>
+				<h3 class="question">Do you consider yourself a self taught programmer?</h3>
+				<section id="radioButtonsContainer">
+					<div>
+						<input type="radio" id="yes" name="self-taught" value="yes" />
+						<label for="yes">Yes</label>
+					</div>
+					<div>
+						<input type="radio" id="no" name="self-taught" value="no" />
+						<label for="no">No</label>
+					</div>
+					<div>
+						<input type="radio" id="idk" name="self-taught" value="idk" />
+						<label for="idk">Idk</label>
+					</div>
+				</section>
+
+				<h3 class="question">Which option describes your current role?</h3>
+				<select id="dropdown" name="dropdown">
+					<option value="" hidden disabled selected>Select current role</option>
+					<option value="Student">Student</option>
+					<option value="job">Full Time Job</option>
+					<option value="learner">Full Time Learner</option>
+					<option value="preferNo">Prefer not to say</option>
+					<option value="other">Other</option>
+				</select>
+				<h3 class="question">Which front end framework you are familiar with?</h3>
+
+				<section id="checkboxContainer">
+					<div>
+						<input type="checkbox" id="React" name="frontend-framework" value="React" />
+						<label for="React">React</label>
+					</div>
+					<div>
+						<input type="checkbox" id="Vue" name="frontend-framework" value="Vue" />
+						<label for="Vue">Vue</label>
+					</div>
+					<div>
+						<input type="checkbox" id="Angular" name="frontend-framework" value="Angular" />
+						<label for="Angular">Angular</label>
+					</div>
+				</section>
+
+				<h3 class="question">
+					<h3 class="question">Any comments or suggestions?</h3>
+				</h3>
+
+				<textarea
+					name="comment"
+					id="comment"
+					cols="30"
+					rows="6"
+					placeholder="Enter your comment here..."
+				></textarea>
+
+				<button id="submit" type="submit">Submit</button>
+			</form>
+		</main>
+		<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+	</body>
+</html>
