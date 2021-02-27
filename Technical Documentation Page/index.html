@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>React Doc</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header id="header-container">
+			<div id="logo">
+				<img
+					src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K"
+					alt="React Logo"
+				/>
+				<h1>React</h1>
+			</div>
+			<button id="hamberger-menu">
+				<svg viewBox="0 0 100 80" width="40" height="40">
+					<rect width="100" height="20"></rect>
+					<rect y="30" width="100" height="20"></rect>
+					<rect y="60" width="100" height="20"></rect>
+				</svg>
+			</button>
+		</header>
+		<nav id="navbar">
+			<header>
+				<h1 id="menu-title">Main Concepts</h1>
+			</header>
+			<a href="#hello_world" class="nav-link">Hello World</a>
+			<a href="#introducing_jsx" class="nav-link">Introducing JSX</a>
+			<a href="#rendering_elements" class="nav-link">Rendering Elements</a>
+			<a href="#components_and_props" class="nav-link">Components and Props</a>
+			<a href="#state_and_lifecycle" class="nav-link">State and Lifecycle</a>
+			<a href="#composition_vs_inheritance" class="nav-link">Composition vs Inheritance</a>
+		</nav>
+
+		<main id="main-doc">
+			<section class="main-section" id="hello_world">
+				<header>
+					<h1>Hello World</h1>
+				</header>
+				<p class="sub-title">The smallest React example looks like this:</p>
+				<code>
+					ReactDOM<span class="function-name">.render</span><span class="other">(</span>
+					<br />
+					<span class="other margin-left-20"><</span><span class="html-element">h1</span
+					><span class="other">></span>Hello, world!<span class="other"><</span
+					><span class="other">/</span><span class="html-element">h1</span
+					><span class="other">>,<br /></span><span class="margin-left-20">document</span
+					><span class="function-name">.getElementById</span><span class="other">(</span
+					><span class="arg">'root'</span><span class="other">)</span><br /><span class="other"
+						>);</span
+					></code
+				>
+				<p>It displays a heading saying “Hello, world!” on the page.</p>
+				<a
+					class="codepen-anchor"
+					target="_blank"
+					href="https://reactjs.org/redirect-to-codepen/hello-world"
+					>Try it on CodePen</a
+				>
+				<p>
+					Click the link above to open an online editor. Feel free to make some changes, and see how they
+					affect the output. Most pages in this guide will have editable examples like this one.
+				</p>
+				<hr />
+				<h2 class="read-more">Read More:</h2>
+				<ul>
+					<li>
+						<a target="_blank" href="https://reactjs.org/docs/hello-world.html#how-to-read-this-guide"
+							>How to Read This Guide</a
+						>
+					</li>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/hello-world.html#knowledge-level-assumptions"
+							>Knowledge Level Assumptions</a
+						>
+					</li>
+				</ul>
+			</section>
+			<section class="main-section" id="introducing_jsx">
+				<header>
+					<h1>Introducing JSX</h1>
+				</header>
+				<p class="sub-title">Consider this variable declaration:</p>
+				<code>
+					<span class="declaration">const</span> element = <span class="other"><</span
+					><span class="html-element">h1</span><span class="other">></span>Hello, world!<span
+						class="other"
+						><</span
+					><span class="other">/</span><span class="html-element">h1</span
+					><span class="other">>;<br /></span
+				></code>
+				<p>This funny tag syntax is neither a string nor HTML.</p>
+				<p>
+					It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React
+					to describe what the UI should look like. JSX may remind you of a template language, but it
+					comes with the full power of JavaScript.
+				</p>
+				<p>
+					JSX produces React “elements”. We will explore rendering them to the DOM in the next section.
+					Below, you can find the basics of JSX necessary to get you started.
+				</p>
+				<a
+					class="codepen-anchor"
+					target="_blank"
+					href="https://reactjs.org/redirect-to-codepen/introducing-jsx"
+					>Try it on CodePen</a
+				>
+				<hr />
+				<h2 class="read-more">Read More:</h2>
+				<ul>
+					<li>
+						<a target="_blank" href="https://reactjs.org/docs/introducing-jsx.html#why-jsx">Why JSX?</a>
+					</li>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/introducing-jsx.html#embedding-expressions-in-jsx"
+							>Embedding Expressions in JSX</a
+						>
+					</li>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/introducing-jsx.html#jsx-is-an-expression-too"
+							>JSX is an Expression Too</a
+						>
+					</li>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/introducing-jsx.html#specifying-attributes-with-jsx"
+							>Specifying Attributes with JSX</a
+						>
+					</li>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/introducing-jsx.html#specifying-children-with-jsx"
+							>Specifying Children with JSX</a
+						>
+					</li>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks"
+							>JSX Prevents Injection Attacks</a
+						>
+					</li>
+					<li>
+						<a target="_blank" href="https://reactjs.org/docs/introducing-jsx.html#jsx-represents-objects"
+							>JSX Represents Objects</a
+						>
+					</li>
+				</ul>
+			</section>
+			<section class="main-section" id="rendering_elements">
+				<header>
+					<h1>Rendering Elements</h1>
+				</header>
+				<p class="sub-title">Elements are the smallest building blocks of React apps.</p>
+				<p>An element describes what you want to see on the screen:</p>
+				<code>
+					<span class="declaration">const</span> element = <span class="other"><</span
+					><span class="html-element">h1</span><span class="other">></span>Hello, world!<span
+						class="other"
+						><</span
+					><span class="other">/</span><span class="html-element">h1</span
+					><span class="other">>;<br /></span
+				></code>
+				<p>
+					Unlike browser DOM elements, React elements are plain objects, and are cheap to create. React
+					DOM takes care of updating the DOM to match the React elements.
+				</p>
+				<blockquote>
+					<p><strong>Note:</strong></p>
+					<p>
+						One might confuse elements with a more widely known concept of “components”. We will introduce
+						components in the next section. Elements are what components are “made of”, and we encourage
+						you to read this section before jumping ahead.
+					</p>
+				</blockquote>
+				<a
+					class="codepen-anchor"
+					target="_blank"
+					href="https://reactjs.org/redirect-to-codepen/rendering-elements/render-an-element"
+					>Try it on CodePen</a
+				>
+				<hr />
+				<h2 class="read-more">Read More:</h2>
+				<ul>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/rendering-elements.html#rendering-an-element-into-the-dom"
+							>Rendering an Element into the DOM</a
+						>
+					</li>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/rendering-elements.html#updating-the-rendered-element"
+							>Updating the Rendered Element</a
+						>
+					</li>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/rendering-elements.html#react-only-updates-whats-necessary"
+							>React Only Updates What’s Necessary</a
+						>
+					</li>
+				</ul>
+			</section>
+			<section class="main-section" id="components_and_props">
+				<header>
+					<h1>Components and Props</h1>
+				</header>
+				<p class="sub-title">
+					Components let you split the UI into independent, reusable pieces, and think about each piece
+					in isolation. This page provides an introduction to the idea of components.
+				</p>
+				<p>
+					Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called
+					“props”) and return React elements describing what should appear on the screen.
+				</p>
+				<h2>Function and Class Components</h2>
+				<p>The simplest way to define a component is to write a JavaScript function:</p>
+				<code>
+					<span class="declaration">function</span> <span class="function-name">Welcome</span
+					><span class="other">(</span>props<span class="other">)</span> <span class="other">{</span
+					><br />
+					<span class="declaration margin-left-20">return</span> <span class="other"><</span
+					><span class="html-element">h1</span><span class="other">></span>Hello,
+					<span class="other">{</span>props.name<span class="other">}</span><span class="other"><</span
+					><span class="other">/</span><span class="html-element">h1</span
+					><span class="other">>;<br /></span><span class="other">}</span>
+				</code>
+				<p>
+					This function is a valid React component because it accepts a single “props” (which stands for
+					properties) object argument with data and returns a React element. We call such components
+					“function components” because they are literally JavaScript functions.
+				</p>
+				<p>
+					Function and Class components both have some additional features that we will discuss in the
+					next sections.
+				</p>
+
+				<hr />
+				<h2 class="read-more">Read More:</h2>
+				<ul>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/components-and-props.html#rendering-a-component"
+							>Rendering a Component</a
+						>
+					</li>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/components-and-props.html#composing-components"
+							>Composing Components</a
+						>
+					</li>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/components-and-props.html#extracting-components"
+							>Extracting Components</a
+						>
+					</li>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/components-and-props.html#props-are-read-only"
+							>Props are Read-Only</a
+						>
+					</li>
+				</ul>
+			</section>
+			<section class="main-section" id="state_and_lifecycle">
+				<header>
+					<h1>State and Lifecycle</h1>
+				</header>
+				<p class="sub-title">
+					This page introduces the concept of state and lifecycle in a React component.
+				</p>
+				<p>
+					Consider the ticking clock example from one of the previous sections. In Rendering Elements, we
+					have only learned one way to update the UI. We call ReactDOM.render() to change the rendered
+					output:
+				</p>
+
+				<code>
+					<span class="declaration">function</span> <span class="function-name">tick</span
+					><span class="other">() {</span><br />
+					<span class="declaration margin-left-20">const</span> element =
+					<span class="other">(</span>
+					<br />
+					<span class="other margin-left-40"><</span><span class="html-element">div</span
+					><span class="other">></span>
+					<br />
+					<span class="other margin-left-60"><</span><span class="html-element">h1</span
+					><span class="other">></span>Hello, world!<span class="other"><</span
+					><span class="other">/</span><span class="html-element">h1</span><span class="other">></span>
+					<br />
+					<span class="other margin-left-60"><</span><span class="html-element">h2</span
+					><span class="other">></span>It is <span class="other">{</span
+					><span class="declaration">new</span> <span class="date">Date</span
+					><span class="other">().</span><span class="function-name">toLocaleTimeString</span
+					><span class="other">()}</span>.<span class="other"><</span><span class="other">/</span
+					><span class="html-element">h2</span><span class="other">></span>
+					<br />
+					<span class="other margin-left-40"><</span><span class="other">/</span
+					><span class="html-element">div</span><span class="other">></span>
+					<br />
+					<span class="other margin-left-20">);</span>
+					<br />
+					<span class="margin-left-20">ReactDOM</span><span class="function-name">.render</span
+					><span class="other">(</span>
+					<br />
+					<span class="margin-left-40">element</span><span class="other">,</span>
+					<br />
+					<span class="margin-left-40">document</span><span class="function-name">.getElementById</span
+					><span class="other">(</span><span class="arg">'root'</span><span class="other">)</span>
+					<br />
+					<span class="other margin-left-20">);</span>
+					<br />
+					<span class="other">}</span>
+					<br />
+					<br />
+					<span class="function-name">setInterval</span><span class="other">(</span>tick<span
+						class="other"
+						>,</span
+					>
+					<span class="function-name">1000</span><span class="other">);</span>
+				</code>
+				<a
+					class="codepen-anchor"
+					target="_blank"
+					href="https://codepen.io/gaearon/pen/gwoJZk?editors=0010"
+					>Try it on CodePen</a
+				>
+				<p>
+					This function is a valid React component because it accepts a single “props” (which stands for
+					properties) object argument with data and returns a React element. We call such components
+					“function components” because they are literally JavaScript functions.
+				</p>
+				<p>
+					Function and Class components both have some additional features that we will discuss in the
+					next sections.
+				</p>
+
+				<hr />
+				<h2 class="read-more">Read More:</h2>
+				<ul>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/components-and-props.html#rendering-a-component"
+							>Rendering a Component</a
+						>
+					</li>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/components-and-props.html#composing-components"
+							>Composing Components</a
+						>
+					</li>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/components-and-props.html#extracting-components"
+							>Extracting Components</a
+						>
+					</li>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/components-and-props.html#props-are-read-only"
+							>Props are Read-Only</a
+						>
+					</li>
+				</ul>
+			</section>
+			<section class="main-section" id="composition_vs_inheritance">
+				<header>
+					<h1>Composition vs Inheritance</h1>
+				</header>
+				<p class="sub-title">
+					React has a powerful composition model, and we recommend using composition instead of
+					inheritance to reuse code between components.
+				</p>
+				<p>
+					In this section, we will consider a few problems where developers new to React often reach for
+					inheritance, and show how we can solve them with composition.
+				</p>
+				<hr />
+				<h2>Containment</h2>
+				<p>
+					Some components don’t know their children ahead of time. This is especially common for
+					components like Sidebar or Dialog that represent generic “boxes”.
+				</p>
+				<p>
+					We recommend that such components use the special children prop to pass children elements
+					directly into their output:
+				</p>
+				<code>
+					<span class="declaration">function</span>
+					<span class="function-name">FancyBorder</span><span class="other">(</span>props<span
+						class="other"
+						>) {</span
+					>
+					<br />
+					<span class="declaration margin-left-20">return</span>
+					<span class="other">(</span>
+					<br />
+					<span class="other margin-left-40"><</span><span class="html-element">div</span>
+					<span class="declaration">className</span><span class="other">={</span
+					><span class="string">'FancyBorder FancyBorder-'</span>
+					<span class="other">+</span>
+					<span class="html-element">props</span><span class="other">.</span
+					><span class="html-element">color</span><span class="other">}></span>
+					<br />
+					<span class="other margin-left-60">{</span>props<span class="other">.</span>children<span
+						class="other"
+						>}</span
+					>
+					<br />
+					<span class="other margin-left-40"><</span><span class="other">/</span
+					><span class="html-element">div</span><span class="other">></span>
+					<br />
+					<span class="other margin-left-20">);</span>
+					<br />
+					<span class="other">}</span>
+				</code>
+				<a
+					class="codepen-anchor"
+					target="_blank"
+					href="https://codepen.io/gaearon/pen/ozqNOV?editors=0010"
+					>Try it on CodePen</a
+				>
+				<p>
+					React elements like <Contacts /> and <Chat /> are just objects, so you can pass them as props
+					like any other data. This approach may remind you of “slots” in other libraries but there are
+					no limitations on what you can pass as props in React.
+				</p>
+				<hr />
+				<h2 class="read-more">Read More:</h2>
+				<ul>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/composition-vs-inheritance.html#specialization"
+							>Specialization</a
+						>
+					</li>
+					<li>
+						<a
+							target="_blank"
+							href="https://reactjs.org/docs/composition-vs-inheritance.html#so-what-about-inheritance"
+							>So What About Inheritance?</a
+						>
+					</li>
+				</ul>
+			</section>
+		</main>
+		<script src="script.js"></script>
+		<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+	</body>
+</html>

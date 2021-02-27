@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+	--collor1: #413c69;
+	--color2: #b2aaf0;
+	--color3: #4a47a3;
+	--whiteColor: #fff;
+	--fontSize09: 0.9rem;
+	--fontSize1: 1rem;
+	--fontSize11: 1.1rem;
+	--fontSize12: 1.2rem;
+	--fontSize13: 1.3rem;
+	--fontSize15: 1.5rem;
+	--fontSize3: 3rem;
+	--fontWeight2: 200;
+	--fontWeight3: 300;
+	--fontWeight4: 400;
+	--fontWeight5: 500;
+	--fontWeight7: 700;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	font-family: "Poppins", sans-serif;
+	font-size: var(--fontSize1);
+	font-weight: var(--fontWeight4);
+	line-height: 1.4;
+}
+
+#navbar {
+	display: none;
+	flex-direction: column;
+	background-color: rgb(235, 235, 235);
+}
+
+#logo {
+	display: flex;
+	align-items: center;
+	height: 50px;
+	padding: 5px 50px;
+	color: var(--whiteColor);
+}
+
+#logo img {
+	height: 70%;
+	width: auto;
+}
+
+#logo h1 {
+	margin: 0 0 0 10px;
+	font-size: var(--fontSize13);
+	font-weight: var(--fontWeight5);
+}
+
+#header-container {
+	display: flex;
+	background-color: var(--collor1);
+}
+
+.show-menu {
+	display: flex !important;
+}
+
+#hamberger-menu {
+	background: none;
+	border: none;
+	margin: 0 50px 0 auto;
+	cursor: pointer;
+}
+
+#hamberger-menu rect {
+	fill: var(--color2);
+}
+
+#hamberger-menu:hover > svg rect {
+	fill: var(--whiteColor);
+}
+
+#hamberger-menu:focus {
+	outline: none;
+}
+
+#menu-title {
+	margin: 0;
+	padding: 10px;
+	font-size: var(--fontSize11);
+	font-weight: var(--fontWeight3);
+	background-color: #4a47a38a;
+	color: var(--whiteColor);
+}
+
+.nav-link {
+	text-align: center;
+	text-decoration: none;
+	color: rgb(73, 73, 73);
+	padding: 10px 0;
+	margin: 1px 0 0;
+	font-size: var(--fontSize09);
+	font-weight: var(--fontWeight3);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+	background-color: var(--color3);
+	color: var(--whiteColor);
+}
+
+#main-doc {
+	padding: 0 10px 50px;
+	margin-top: 25px;
+}
+
+.main-section header h1 {
+	margin: 0 0 20px;
+	color: var(--collor1);
+	font-size: var(--fontSize3);
+	font-weight: var(--fontWeight7);
+}
+
+.sub-title {
+	color: var(--color3);
+	font-size: var(--fontSize13);
+	font-weight: var(--fontWeight2);
+}
+
+.main-section p {
+	margin: 10px 0;
+	color: var(--collor1);
+}
+
+.main-section h2 {
+	margin: 0 0 10px;
+	color: var(--collor1);
+	font-size: var(--fontSize15);
+	font-weight: var(--fontWeight7);
+}
+
+blockquote {
+	border-radius: 10px;
+	margin: 20px auto;
+	width: 90%;
+	padding: 10px;
+	background-color: rgba(255, 229, 100, 0.3);
+	border-left-color: #ffe564;
+	border-left-width: 9px;
+	border-left-style: solid;
+}
+
+.codepen-anchor {
+	display: block;
+	width: fit-content;
+	margin: 20px 0;
+	background-color: rgba(187, 239, 253, 0.3);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	color: #1a1a1a;
+}
+
+hr {
+	border: 1px solid var(--color2);
+	width: 90%;
+	margin: 30px auto;
+}
+
+.read-more {
+	margin: 20px;
+	font-size: var(--fontSize12) !important;
+	font-weight: var(--fontWeight7) !important;
+}
+
+ul li a {
+	text-decoration: none;
+	color: #5a5a5a;
+	margin-bottom: 5px;
+}
+
+ul li a:hover,
+ul li a:focus {
+	color: #000;
+	text-decoration: underline;
+}
+
+/* Code */
+code {
+	display: block;
+	font-size: var(--fontSize11);
+	font-family: monospace;
+	background: rgb(40, 44, 52);
+	color: var(--whiteColor);
+	margin: 20px auto;
+	width: 90%;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+code .declaration {
+	color: rgb(197, 165, 197);
+}
+
+code .function-name {
+	color: rgb(121, 182, 242);
+}
+
+code .html-element {
+	color: rgb(252, 146, 158);
+}
+
+code .arg {
+	color: rgb(141, 200, 145);
+}
+
+code .date {
+	color: rgb(250, 200, 99);
+}
+
+code .string {
+	color: rgb(141, 200, 145);
+}
+
+code .other {
+	color: rgb(136, 198, 190);
+}
+
+.margin-left-20 {
+	margin-left: 20px;
+}
+.margin-left-40 {
+	margin-left: 40px;
+}
+.margin-left-60 {
+	margin-left: 60px;
+}
+.margin-left-80 {
+	margin-left: 80px;
+}
+.margin-left-100 {
+	margin-left: 100px;
+}
+
+@media (min-width: 1000px) {
+	body {
+		flex-direction: row;
+	}
+
+	#header-container {
+		position: fixed;
+		right: 0;
+		left: 0;
+		flex-basis: 100%;
+		z-index: 1;
+	}
+
+	#navbar {
+		display: flex;
+		position: fixed;
+		margin-top: 50px;
+		width: 280px;
+		height: 100%;
+	}
+
+	#hamberger-menu {
+		display: none;
+	}
+
+	#main-doc {
+		position: absolute;
+		margin: 0 0 0 300px;
+	}
+
+	.nav-link {
+		text-align: left;
+		padding: 10px 0 20px 10px;
+	}
+
+	.main-section {
+		padding-top: 75px;
+	}
+}
