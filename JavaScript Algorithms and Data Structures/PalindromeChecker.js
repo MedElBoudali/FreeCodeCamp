@@ -4,9 +4,7 @@ function palindrome(str) {
 
 	//push alphanumeric to newArr
 	for (let i = 0; i < str.length; i++) {
-		if (/^[a-zA-Z0-9]*$/.test(str.charAt(i))) {
-			newArr.push(str.charAt(i).toLowerCase());
-		}
+		if (/^[a-zA-Z0-9]*$/.test(str.charAt(i))) newArr.push(str.charAt(i).toLowerCase());
 	}
 
 	// reverse array
@@ -14,15 +12,10 @@ function palindrome(str) {
 		revArr.push(newArr[i]);
 	}
 
-	for (let i = 0; i < newArr.length; i++) {
-		if (newArr[i] !== revArr[i]) {
-			console.log(false); //for testing using node
-			return false;
-		}
-	}
-	console.log(true); //for testing using node
+	for (let i = 0; i < newArr.length; i++) if (newArr[i] !== revArr[i]) return false;
+
 	return true;
 }
 
-palindrome("eye"); //=> true
-palindrome("not a palindrome"); //=> false
+palindrome("eye");
+palindrome("not a palindrome");
