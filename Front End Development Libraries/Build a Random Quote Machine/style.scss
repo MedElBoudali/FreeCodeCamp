@@ -1,0 +1,145 @@
+:root {
+	--primaryColor: #dedee3;
+	--secondaryColor: #7031c0;
+	--primaryBackground: #16141f;
+	--secondaryBackground: #191820;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	position: relative;
+	overflow-y: auto;
+	scrollbar-width: thin;
+	scrollbar-color: var(--secondaryColor) var(--primaryBackground);
+}
+
+body {
+	background-color: var(--primaryBackground);
+	color: var(--primaryColor);
+	font-family: Roboto, sans-serif;
+	font-size: 1rem;
+	line-height: normal;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#app {
+	--padding: 0 11px;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--padding);
+	@media (min-width: 472px) {
+		--padding: 0;
+	}
+}
+
+#quote-box {
+	--width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	background-color: var(--secondaryColor);
+	width: var(--width);
+	padding: 40px 50px;
+	border-radius: 5px;
+	#text {
+		position: relative;
+		font-size: 1.3rem;
+		font-weight: bold;
+		&:before {
+			content: '"';
+			position: absolute;
+			color: var(--primaryBackground);
+			left: -25px;
+			top: -25px;
+			font-size: 4rem;
+		}
+	}
+
+	#author {
+		align-self: flex-end;
+		font-size: 1.1rem;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: var(--secondaryBackground);
+	}
+	@media (min-width: 450px) {
+		--width: 450px;
+	}
+}
+
+#loading {
+	height: 24px;
+	width: 24px;
+	svg {
+		path {
+			stroke-width: 1;
+			stroke: var(--secondaryColor);
+		}
+		animation: SvgAnimation 1s steps(20) infinite;
+	}
+}
+
+#buttons-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@mixin style {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--primaryColor);
+		background-color: var(--primaryBackground);
+		height: 35px;
+		padding: 0 10px;
+		border-radius: 5px;
+	}
+	a {
+		@include style;
+		text-decoration: none;
+		svg > path {
+			fill: #1da1f2;
+		}
+	}
+	button {
+		@include style;
+		font-weight: bold;
+		text-transform: capitalize;
+	}
+}
+
+@keyframes SvgAnimation {
+	0% {
+		transform: rotate(180deg);
+	}
+	to {
+		transform: rotate(540deg);
+	}
+}
+
+button {
+	border: none;
+	outline: none;
+	background: none;
+	cursor: pointer;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+::-webkit-scrollbar-track {
+	background: var(--primaryBackground);
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--secondaryColor);
+	border-radius: 6px;
+	border: 3px solid var(--primaryBackground);
+}
