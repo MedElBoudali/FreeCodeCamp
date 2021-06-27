@@ -1,0 +1,174 @@
+:root {
+	--primaryColor: #dedee3;
+	--secondaryColor: #7031c0;
+	--primaryBackground: #16141f;
+	--secondaryBackground: #191820;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	position: relative;
+	overflow-y: auto;
+	scrollbar-width: thin;
+	scrollbar-color: var(--secondaryColor) var(--primaryBackground);
+}
+
+body {
+	background-color: var(--primaryBackground);
+	color: var(--primaryColor);
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+#app {
+	--padding: 0 11px;
+	width: 100%;
+	height: 100vh;
+	padding: var(--padding);
+	@media (min-width: 472px) {
+		--padding: 0;
+	}
+}
+
+#app-wrapper {
+	--direction: column;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: var(--direction);
+	@media (min-width: 700px) {
+		--direction: row;
+	}
+}
+
+@mixin style {
+	--width: 100%;
+	--pading: 2px;
+	--height: 50vh;
+	width: var(--width);
+	height: var(--height);
+	padding: var(--pading);
+	.title {
+		--margin: 10px auto;
+		width: fit-content;
+		margin: var(--margin);
+		font-size: 1.5rem;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: var(--secondaryColor);
+	}
+	@media (min-width: 700px) {
+		--width: 50%;
+		--pading: 5px;
+		--height: 100vh;
+		.title {
+			--margin: 5px auto;
+		}
+	}
+}
+
+#editor-wrapper {
+	@include style;
+	#editor {
+		width: 100%;
+		min-height: 50px;
+		height: calc(100% - 50px);
+		resize: none;
+		background-color: var(--primaryColor);
+		border-radius: 5px;
+		padding: 5px;
+		font-size: 0.9rem;
+		color: #000;
+		border: none;
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+#preview-wrapper {
+	@include style;
+	#preview {
+		width: 100%;
+		min-height: 50px;
+		height: calc(100% - 50px);
+		background-color: var(--secondaryColor);
+		border-radius: 5px;
+		padding: 5px;
+		overflow-y: scroll;
+		blockquote {
+			border-left: 3px solid #224b4b;
+			color: #224b4b;
+			padding-left: 5px;
+			margin-left: 25px;
+		}
+
+		a {
+			color: var(--primaryBackground);
+		}
+		> p > code {
+			padding: 3px;
+		}
+
+		code {
+			background-color: var(--primaryBackground);
+			font-size: 0.875rem;
+			font-weight: bold;
+		}
+
+		pre {
+			display: block;
+			overflow: auto;
+			background-color: var(--primaryBackground);
+			padding: 5px;
+			line-height: 1.2;
+		}
+
+		h1 {
+			border-bottom: 2px solid var(--primaryBackground);
+		}
+
+		h2 {
+			border-bottom: 1px solid var(--primaryBackground);
+		}
+
+		table {
+			border-collapse: collapse;
+		}
+		td,
+		th {
+			border: 2px solid var(--primaryBackground);
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+
+		img {
+			display: block;
+			max-width: 90%;
+			margin: 2rem auto;
+		}
+
+		li {
+			margin-left: 20px;
+		}
+	}
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+::-webkit-scrollbar-track {
+	background: var(--primaryBackground);
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--secondaryColor);
+	border-radius: 6px;
+	border: 3px solid var(--primaryBackground);
+}
