@@ -44,7 +44,7 @@
    - [Project Link](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine)
    - [Solution Link](https://codepen.io/medelboudali/full/gOWYMmj)
 2. **Build a Markdown Previewer**
-   - [Project Link](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine)
+   - [Project Link](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-markdown-previewer)
    - [Solution Link](https://codepen.io/medelboudali/full/VwbZBxy)
 3. **Build a Drum Machine**
    - [Project Link](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine)
