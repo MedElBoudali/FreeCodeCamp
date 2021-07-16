@@ -113,8 +113,8 @@ const bankTwo = [
 ];
 
 const activeStyle = {
-	backgroundColor: "orange",
-	boxShadow: "0 3px orange",
+	backgroundColor: "#7031c0",
+	boxShadow: "0 3px #7031c0",
 	height: 77,
 	marginTop: 13
 };
@@ -125,24 +125,35 @@ const inactiveStyle = {
 	boxShadow: "3px 3px 5px black"
 };
 
-const DrumPad = props => {
-	const [padStyle, setPadStyle] = useState(inactiveStyle);
-	useEffect(() => {
+const DrumPad = ({ clipId, keyTrigger, clip, keyCode, power, updateDisplay }) => {
+	const [padStyle, setPadStyle] = React.useState(inactiveStyle);
+	const padStyleRef = React.useRef(inactiveStyle);
+
+	React.useEffect(() => {
 		document.addEventListener("keydown", handleKeyPress);
 		return () => {
 			document.removeEventListener("keydown", handleKeyPress);
 		};
 	}, []);
+
 	const handleKeyPress = e => {
-		if (e.keyCode === props.keyCode) {
+		if (e.keyCode === keyCode) {
 			playSound();
 		}
 	};
+
 	const activatePad = () => {
-		if (props.power) {
-			padStyle.backgroundColor === "orange" ? setPadStyle(inactiveStyle) : setPadStyle(activatePad);
-		} else if (padStyle.marginTop === 13) {
+		if (power) {
+			if (padStyleRef.current.backgroundColor === "#7031c0") {
+				setPadStyle(inactiveStyle);
+				padStyleRef.current = inactiveStyle;
+			} else {
+				setPadStyle(activeStyle);
+				padStyleRef.current = activeStyle;
+			}
+		} else if (padStyleRef.current.marginTop === 13) {
 			setPadStyle(inactiveStyle);
+			padStyleRef.current = inactiveStyle;
 		} else {
 			setPadStyle({
 				height: 77,
@@ -150,62 +161,67 @@ const DrumPad = props => {
 				backgroundColor: "grey",
 				boxShadow: "0 3px grey"
 			});
+			padStyleRef.current = {
+				marginTop: 13,
+				backgroundColor: "grey"
+			};
 		}
 	};
+
 	const playSound = () => {
-		const sound = document.getElementById(props.keyTrigger);
+		const sound = document.getElementById(keyTrigger);
 		sound.currentTime = 0;
 		sound.play();
 		activatePad();
 		setTimeout(() => activatePad(), 100);
-		props.updateDisplay(props.clipId.replace(/-/g, " "));
+		updateDisplay(clipId.replace(/-/g, " "));
 	};
 	return (
-		<div className="drum-pad" id={props.clipId} onClick={playSound} style={padStyle}>
-			<audio className="clip" id={props.keyTrigger} src={props.clip} />
-			{this.props.keyTrigger}
+		<div className="drum-pad" id={clipId} onClick={playSound} style={padStyle}>
+			<audio className="clip" id={keyTrigger} src={clip} />
+			{keyTrigger}
 		</div>
 	);
 };
 
-const padBank = ({ power, currentPadBank }) => {
-	let padBank;
+const PadBank = ({ power, currentPadBank, updateDisplay }) => {
+	let pBank;
 	if (power) {
-		padBank = currentPadBank.map((drumObj, i, padBankArr) => {
+		pBank = currentPadBank.map((drumObj, i, padBankArr) => {
 			return (
 				<DrumPad
 					clip={padBankArr[i].url}
 					clipId={padBankArr[i].id}
 					keyCode={padBankArr[i].keyCode}
 					keyTrigger={padBankArr[i].keyTrigger}
-					power={this.props.power}
-					updateDisplay={this.props.updateDisplay}
+					power={power}
+					updateDisplay={updateDisplay}
 				/>
 			);
 		});
 	} else {
-		padBank = currentPadBank.map((drumObj, i, padBankArr) => {
+		pBank = currentPadBank.map((drumObj, i, padBankArr) => {
 			return (
 				<DrumPad
 					clip="#"
 					clipId={padBankArr[i].id}
 					keyCode={padBankArr[i].keyCode}
 					keyTrigger={padBankArr[i].keyTrigger}
-					power={this.props.power}
-					updateDisplay={this.props.updateDisplay}
+					power={power}
+					updateDisplay={updateDisplay}
 				/>
 			);
 		});
 	}
-	return <div className="pad-bank">{padBank}</div>;
+	return <div className="pad-bank">{pBank}</div>;
 };
 
 const App = () => {
-	const [power, setPower] = useState(true);
-	const [display, setDisplay] = useState(String.fromCharCode(160));
-	const [currentPadBank, setCurrentPadBank] = useState(bankOne);
-	const [currentPadBankId, setCurrentPadBankId] = useState("Heater Kit");
-	const [sliderVal, setSliderVal] = useState(0.3);
+	const [power, setPower] = React.useState(true);
+	const [display, setDisplay] = React.useState(String.fromCharCode(160));
+	const [currentPadBank, setCurrentPadBank] = React.useState(bankOne);
+	const [currentPadBankId, setCurrentPadBankId] = React.useState("Heater Kit");
+	const [sliderVal, setSliderVal] = React.useState(0.3);
 
 	const powerControl = () => {
 		setPower(!power);
@@ -244,40 +260,53 @@ const App = () => {
 		setDisplay(String.fromCharCode(160));
 	};
 
+	const powerSlider = power
+		? {
+				float: "right"
+		  }
+		: {
+				float: "left"
+		  };
+	const bankSlider =
+		currentPadBank === bankOne
+			? {
+					float: "left"
+			  }
+			: {
+					float: "right"
+			  };
+	{
+		const clips = [].slice.call(document.getElementsByClassName("clip"));
+		clips.forEach(sound => {
+			sound.volume = sliderVal;
+		});
+	}
+
 	return (
 		<div className="inner-container" id="drum-machine">
-			<PadBank
-				clipVolume={this.state.sliderVal}
-				currentPadBank={this.state.currentPadBank}
-				power={this.state.power}
-				updateDisplay={this.displayClipName}
-			/>
-
-			<div className="logo">
-				<div className="inner-logo ">{"FCC" + String.fromCharCode(160)}</div>
-				<i className="inner-logo fa fa-free-code-camp" />
-			</div>
-
+			<PadBank clipVolume={sliderVal} currentPadBank={currentPadBank} power={power} updateDisplay={displayClipName} />
 			<div className="controls-container">
-				<div className="control">
-					<p>Power</p>
-					<div className="select" onClick={this.powerControl}>
-						<div className="inner" style={powerSlider} />
+				<p id="display">{display}</p>
+				<div id="controls">
+					<div className="control">
+						<p>Power</p>
+						<div className="select" onClick={powerControl}>
+							<div className="inner" style={powerSlider} />
+						</div>
+					</div>
+					<div className="control">
+						<p>Bank</p>
+						<div className="select" onClick={selectBank}>
+							<div className="inner" style={bankSlider} />
+						</div>
 					</div>
 				</div>
-				<p id="display">{this.state.display}</p>
 				<div className="volume-slider">
-					<input max="1" min="0" onChange={this.adjustVolume} step="0.01" type="range" value={this.state.sliderVal} />
-				</div>
-				<div className="control">
-					<p>Bank</p>
-					<div className="select" onClick={this.selectBank}>
-						<div className="inner" style={bankSlider} />
-					</div>
+					<input max="1" min="0" onChange={adjustVolume} step="0.01" type="range" value={sliderVal} />
 				</div>
 			</div>
 		</div>
 	);
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("app"));
