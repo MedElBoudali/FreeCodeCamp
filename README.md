@@ -2,7 +2,7 @@
 
 # FreeCodeCamp Challenges & working projects.
 
-## Responsive Web Design Projects(_[Certification Link](https://www.freecodecamp.org/certification/elboudali/responsive-web-designjavascript-algorithms-and-data-structures)_)
+## Responsive Web Design Projects(_[Certification Link](https://www.freecodecamp.org/certification/elboudali/responsive-web-design)_)
 
 1. **Build a Tribute Page**
    - [Project Link](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page)
@@ -42,7 +42,7 @@
 
 1. **Build a Random Quote Machine**
    - [Project Link](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine)
-   - [Solution Link](https://codepen.io/medelboudali/pen/gOWYMmj)
+   - [Solution Link](https://codepen.io/medelboudali/full/gOWYMmj)
 2. **Build a Markdown Previewer**
    - [Project Link](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine)
-   - [Solution Link](https://codepen.io/medelboudali/pen/VwbZBxy)
+   - [Solution Link](https://codepen.io/medelboudali/full/VwbZBxy)
