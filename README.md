@@ -49,3 +49,6 @@
 3. **Build a Drum Machine**
    - [Project Link](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine)
    - [Solution Link](https://codepen.io/medelboudali/full/qBmrLrX)
+4. **Build a JavaScript Calculator**
+   - [Project Link](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator)
+   - [Solution Link](https://codepen.io/medelboudali/full/NWjjMEQ)
