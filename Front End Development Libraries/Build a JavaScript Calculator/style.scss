@@ -1,0 +1,113 @@
+:root {
+	--primaryColor: #dedee3;
+	--secondaryColor: #7031c0;
+	--primaryBackground: #16141f;
+	--secondaryBackground: #554e6e;
+	--displayBg: #2e0f56;
+	--orange: #ea743d;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	position: relative;
+	overflow-y: auto;
+	scrollbar-width: thin;
+	scrollbar-color: var(--secondaryColor) var(--primaryBackground);
+}
+
+body {
+	background-color: var(--primaryBackground);
+	color: var(--primaryColor);
+	font-family: Roboto, sans-serif;
+	font-size: 1rem;
+	line-height: normal;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#app {
+	--padding: 0 11px;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--padding);
+	@media (min-width: 472px) {
+		--padding: 0;
+	}
+}
+
+#displayWrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 5px;
+	height: 70px;
+	background-color: var(--displayBg);
+	margin-bottom: -5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding: 5px 5px 10px 5px;
+	text-align: right;
+	font-size: 1.3rem;
+	font-weight: 500;
+	color: white;
+	.formulaScreen {
+		color: var(--primaryColor);
+	}
+}
+
+#Calc {
+	background-color: var(--secondaryBackground);
+	padding: 5px;
+	border-radius: 5px;
+	display: grid;
+	grid-template-columns: repeat(4, 70px);
+	gap: 5px;
+	button {
+		min-width: 70px;
+		min-height: 50px;
+		font-size: 1.3rem;
+		font-weight: 500;
+		border-radius: 5px;
+		border: none;
+		background-color: var(--secondaryColor);
+		color: var(--primaryColor);
+		cursor: pointer;
+		&:hover {
+			background-color: var(--primaryBackground);
+			color: var(--secondaryColor);
+		}
+	}
+	#add {
+		grid-column: 1;
+		grid-row: 1;
+	}
+	#subtract {
+		grid-column: 2;
+		grid-row: 1;
+	}
+	#multiply {
+		grid-column: 3;
+		grid-row: 1;
+	}
+	#divide {
+		grid-column: 4;
+		grid-row: 1;
+	}
+	#equals {
+		grid-column: 4;
+		grid-row: 2 / span 4;
+		background-color: var(--orange);
+		&:hover {
+			background-color: var(--primaryColor);
+			color: var(--orange);
+		}
+	}
+}
