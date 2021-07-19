@@ -38,7 +38,7 @@
    - [Project Link](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register)
    - [Solution Link](https://github.com/melboudali/FreeCodeCamp/blob/main/JavaScript%20Algorithms%20and%20Data%20Structures/cashRegister.js)
 
-## Front End Development Libraries (_[Certification Link]()_)
+## Front End Development Libraries (_[Certification Link](https://www.freecodecamp.org/certification/elboudali/front-end-libraries)_)
 
 1. **Build a Random Quote Machine**
    - [Project Link](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine)
@@ -52,3 +52,6 @@
 4. **Build a JavaScript Calculator**
    - [Project Link](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator)
    - [Solution Link](https://codepen.io/medelboudali/full/NWjjMEQ)
+5. **Build a 25 + 5 Clock**
+   - [Project Link](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clock)
+   - [Solution Link](https://codepen.io/medelboudali/full/qBmjope)
